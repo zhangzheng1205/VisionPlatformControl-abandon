@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="VisionPlatform.UI.CameraConfigControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisionPlatform.UI"
+             xmlns:pu="clr-namespace:Panuon.UI;assembly=Panuon.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="320" MinWidth="320" MinHeight="320" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="ImageParamGroupBox" Grid.Column="1" Header="图像参数" Grid.Row="1" d:LayoutOverrides="Width, Height">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1"/>
+                </Grid.ColumnDefinitions>
+                <pu:PUComboBox x:Name="PixelFormatComboBox" Grid.Column="1" Margin="0,3" d:LayoutOverrides="Height" BorderCornerRadius="3" SelectionChanged="PixelFormatComboBox_SelectionChanged"/>
+                <pu:PUTextBox x:Name="WidthTextBox" Grid.Column="1" Margin="0,3" Grid.Row="1" TextWrapping="Wrap" KeyUp="WidthTextBox_KeyUp" Height="Auto" BorderCornerRadius="3"/>
+                <pu:PUTextBox x:Name="HeihtTextBox" Grid.Column="1" Margin="0,3" Grid.Row="2" TextWrapping="Wrap" KeyUp="HeihtTextBox_KeyUp" Height="Auto" BorderCornerRadius="3"/>
+                <pu:PUCheckBox x:Name="PixelFormatCheckBox" Margin="0,4" Grid.Row="0" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="像素类型" CoverBrush="#FF3399FF" Click="PixelFormatCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="WidthCheckBox" Margin="0,4" Grid.Row="1" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="宽度" CoverBrush="#FF3399FF" Click="WidthCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="HeihtCheckBox" Margin="0,4" Grid.Row="2" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="高度" CoverBrush="#FF3399FF" Click="HeihtCheckBox_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GrabParamGroupBox" Grid.Column="1" Header="采集信息" Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <pu:PUComboBox x:Name="TriggerModeComboBox" Grid.Column="2" Margin="0,3" BorderCornerRadius="3" SelectionChanged="TriggerModeComboBox_SelectionChanged"/>
+                <pu:PUComboBox x:Name="TriggerSourceComboBox" Grid.Row="1" Grid.Column="2" Margin="0,3" BorderCornerRadius="3" SelectionChanged="TriggerSourceComboBox_SelectionChanged"/>
+                <pu:PUComboBox x:Name="TriggerActivationComboBox" Grid.Row="2" Grid.Column="2" Margin="0,3" BorderCornerRadius="3" SelectionChanged="TriggerActivationComboBox_SelectionChanged"/>
+                <pu:PUTextBox x:Name="ExposureTimeTextBox" Grid.Column="2" Margin="0,3" Grid.Row="3" TextWrapping="Wrap" KeyUp="ExposureTimeTextBox_KeyUp" Height="Auto" BorderCornerRadius="3"/>
+                <pu:PUTextBox x:Name="GainTextBox" Grid.Column="2" Margin="0,3" Grid.Row="4" TextWrapping="Wrap" KeyUp="GainTextBox_KeyUp" Height="Auto" BorderCornerRadius="3"/>
+                <pu:PUCheckBox x:Name="TriggerModeCheckBox" Margin="0,4,0,3" Grid.Row="0" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="触发模式" CoverBrush="#FF3399FF" Grid.ColumnSpan="2" Click="TriggerModeCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="TriggerSourceCheckBox" Margin="0,4,0,3" Grid.Row="1" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="触发源" CoverBrush="#FF3399FF" Grid.ColumnSpan="2" Click="TriggerSourceCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="TriggerActivationCheckBox" Margin="0,4,0,3" Grid.Row="2" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="硬件触发" CoverBrush="#FF3399FF" Grid.ColumnSpan="2" Click="TriggerActivationCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="ExposureTimeCheckBox" Margin="0,4,0,3" Grid.Row="3" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="曝光值" CoverBrush="#FF3399FF" Grid.ColumnSpan="2" Click="ExposureTimeCheckBox_Click"/>
+                <pu:PUCheckBox x:Name="GainCheckBox" Margin="0,4,0,3" Grid.Row="4" CheckBoxStyle="Switch" InnerWidth="35" InnerHeight="18" Content="增益值" CoverBrush="#FF3399FF" Grid.ColumnSpan="2" Click="GainCheckBox_Click"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

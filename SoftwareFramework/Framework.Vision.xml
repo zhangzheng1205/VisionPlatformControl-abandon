@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.Vision</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.Vision.Calibration.Calibration">
+            <summary>
+            标定接口
+            </summary>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.CalculateCalibrationMatrix(System.Double[],System.Double[],System.Double[],System.Double[],System.Double[]@)">
+            <summary>
+            计算标定矩阵
+            </summary>
+            <param name="Px">X1</param>
+            <param name="Py">Y1</param>
+            <param name="Qx">X2</param>
+            <param name="Qy">Y2</param>
+            <param name="Matrix">标定矩阵</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.CalculateCalibrationMatrix(Framework.Vision.Calibration.CalibrationParam@)">
+            <summary>
+            计算标定矩阵
+            </summary>
+            <param name="Params">标定参数</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.CalculateCalibrationMatrix(System.Collections.Generic.List{Framework.Vision.Calibration.CalibData},System.Double[]@)">
+            <summary>
+            计算标定矩阵
+            </summary>
+            <param name="CalibDataList">标定数据列表</param>
+            <param name="Matrix">标定矩阵</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.CalculateInverseCalibrationMatrix(System.Collections.Generic.List{Framework.Vision.Calibration.CalibData},System.Double[]@)">
+            <summary>
+            计算逆标定矩阵
+            </summary>
+            <param name="CalibDataList">标定数据列表</param>
+            <param name="InverseMatrix">逆标定矩阵</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.Calibrate(System.Double[],System.Double[],System.Double[],System.Double[]@,System.Double[]@)">
+            <summary>
+            标定
+            </summary>
+            <param name="Matrix">标定矩阵</param>
+            <param name="Px">X1</param>
+            <param name="Py">Y1</param>
+            <param name="Qx">X2</param>
+            <param name="Qy">Y2</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Framework.Vision.Calibration.Calibration.Calibrate(System.Double[],System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            标定
+            </summary>
+            <param name="Matrix">标定矩阵</param>
+            <param name="Px">X1</param>
+            <param name="Py">Y1</param>
+            <param name="Qx">X2</param>
+            <param name="Qy">Y2</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:Framework.Vision.Calibration.CalibData">
+            <summary>
+            标定数据
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibData.Px">
+            <summary>
+            原始X点位
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibData.Py">
+            <summary>
+            原始Y点位
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibData.Qx">
+            <summary>
+            转换X点位
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibData.Qy">
+            <summary>
+            转换Y点位
+            </summary>
+        </member>
+        <member name="T:Framework.Vision.Calibration.CalibrationParam">
+            <summary>
+            标定参数
+            </summary>
+        </member>
+        <member name="M:Framework.Vision.Calibration.CalibrationParam.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibrationParam.CalibDataList">
+            <summary>
+            标定数据列表
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibrationParam.CalibMatrix">
+            <summary>
+            标定矩阵
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibrationParam.InverseCalibMatrix">
+            <summary>
+            逆标定矩阵
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibrationParam.IsMatrixValid">
+            <summary>
+            矩阵有效标志位
+            </summary>
+        </member>
+        <member name="P:Framework.Vision.Calibration.CalibrationParam.IsInverseMatrixValid">
+            <summary>
+            逆矩阵有效标志位
+            </summary>
+        </member>
+    </members>
+</doc>
